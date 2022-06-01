@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="entregasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="clientes">
+    <Key>
+      <PropertyRef Name="dni" />
+    </Key>
+    <Property Name="dni" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidos" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="domicilio" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="localidad" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="provincia" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="provincias" Relationship="Self.clientes_fk_prv" FromRole="clientes" ToRole="provincias" />
+    <NavigationProperty Name="pedidos" Relationship="Self.pedidos_fk_cli" FromRole="clientes" ToRole="pedidos" />
+  </EntityType>
+  <EntityType Name="pedidos">
+    <Key>
+      <PropertyRef Name="id_pedido" />
+    </Key>
+    <Property Name="id_pedido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cliente" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_pedido" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_entrega" Type="DateTime" Precision="0" />
+    <Property Name="firma" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="clientes" Relationship="Self.pedidos_fk_cli" FromRole="pedidos" ToRole="clientes" />
+  </EntityType>
+  <EntityType Name="provincias">
+    <Key>
+      <PropertyRef Name="id_provincia" />
+    </Key>
+    <Property Name="id_provincia" Type="Int32" Nullable="false" />
+    <Property Name="nombre_provincia" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="clientes" Relationship="Self.clientes_fk_prv" FromRole="provincias" ToRole="clientes" />
+  </EntityType>
+  <Association Name="clientes_fk_prv">
+    <End Role="provincias" Type="Self.provincias" Multiplicity="1" />
+    <End Role="clientes" Type="Self.clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="provincias">
+        <PropertyRef Name="id_provincia" />
+      </Principal>
+      <Dependent Role="clientes">
+        <PropertyRef Name="provincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="pedidos_fk_cli">
+    <End Role="clientes" Type="Self.clientes" Multiplicity="1" />
+    <End Role="pedidos" Type="Self.pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clientes">
+        <PropertyRef Name="dni" />
+      </Principal>
+      <Dependent Role="pedidos">
+        <PropertyRef Name="cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="entregasEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="clientes" EntityType="Self.clientes" />
+    <EntitySet Name="pedidos" EntityType="Self.pedidos" />
+    <EntitySet Name="provincias" EntityType="Self.provincias" />
+    <AssociationSet Name="clientes_fk_prv" Association="Self.clientes_fk_prv">
+      <End Role="provincias" EntitySet="provincias" />
+      <End Role="clientes" EntitySet="clientes" />
+    </AssociationSet>
+    <AssociationSet Name="pedidos_fk_cli" Association="Self.pedidos_fk_cli">
+      <End Role="clientes" EntitySet="clientes" />
+      <End Role="pedidos" EntitySet="pedidos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

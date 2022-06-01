@@ -24,5 +24,30 @@ namespace AppHibrida_MGI_SHDB
         {
             InitializeComponent();
         }
+
+        private void btnTactil_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaTactil venTactil = new VentanaTactil();
+            venTactil.ShowDialog();
+
+        }
+
+        private void btn_ordenador_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaPc venPc = new VentanaPc();
+            venPc.ShowDialog();
+        }
+
+        private void Salir_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Salir_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+
     }
 }
