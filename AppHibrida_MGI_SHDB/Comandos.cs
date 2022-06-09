@@ -19,7 +19,21 @@ namespace AppHibrida_MGI_SHDB
                         new KeyGesture(Key.Escape)
             }
         );
+        /*
+        public static readonly RoutedUICommand AddCliente = new RoutedUICommand(
+            "Cerrar la aplicación",
+            "Salir",
+            typeof(MainWindow),
+            new InputGestureCollection()
+            {
+                                new KeyGesture(Key.Escape)
+            }
+        );*/
 
 
     }
 }
+
+
+//         <CommandBinding Command="local:Comandos.AddCliente" Executed="AddCliente_Executed" CanExecute="AddCliente_CanExecute"/>
+

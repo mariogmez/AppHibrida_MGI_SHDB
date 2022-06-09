@@ -23,5 +23,18 @@ namespace AppHibrida_MGI_SHDB
         {
             InitializeComponent();
         }
+
+        private void btnClientes_Click(object sender, RoutedEventArgs e)
+        {
+            GestionClientesPc venClie = new GestionClientesPc();
+            venClie.ShowDialog();
+        }
+
+        private void btnPedidos_Click(object sender, RoutedEventArgs e)
+        {
+            GestionPedidosPC venPed = new GestionPedidosPC();
+            venPed.ShowDialog();
+
+        }
     }
 }

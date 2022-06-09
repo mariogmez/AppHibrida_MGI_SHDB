@@ -1,0 +1,27 @@
+﻿<Window x:Class="AppHibrida_MGI_SHDB.GestionPedidosPC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppHibrida_MGI_SHDB"
+        mc:Ignorable="d"
+        Title="GestionPedidosPC" Height="450" Width="800">
+    <Window.CommandBindings>
+    </Window.CommandBindings>
+
+    <Grid ShowGridLines="True" HorizontalAlignment="Center"
+     VerticalAlignment="Center" Background="AliceBlue"
+     Height="450" Width="800">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Name="btnAddPedido" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,250" >Añadir</Button>
+        <Button Grid.Column="0" Name="btnModificarPedido" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,100">Modificar</Button>
+        <Button Grid.Column="0" Name="btnEliminarPedido" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,-50">Eliminar</Button>
+        <Button Grid.Column="0" Name="btnGuardarPedido" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,-200">Guardar</Button>
+
+
+
+    </Grid>
+</Window>

@@ -68,6 +68,12 @@
       <DependentUpon>Linq_bd.tt</DependentUpon>
     </Compile>
     <Compile Include="Comandos.cs" />
+    <Compile Include="GestionClientesPc.xaml.cs">
+      <DependentUpon>GestionClientesPc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GestionPedidosPC.xaml.cs">
+      <DependentUpon>GestionPedidosPC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Linq_bd.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,6 +91,14 @@
     <Compile Include="VentanaTactil.xaml.cs">
       <DependentUpon>VentanaTactil.xaml</DependentUpon>
     </Compile>
+    <Page Include="GestionClientesPc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestionPedidosPC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
