@@ -81,3 +81,5 @@ C:\Users\mario\Documents\MEGA\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\
 C:\Users\mario\Documents\MEGA\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\AppHibrida_MGI_SHDB.csproj.CopyComplete
 C:\Users\mario\Documents\MEGA\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\AppHibrida_MGI_SHDB.exe
 C:\Users\mario\Documents\MEGA\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\AppHibrida_MGI_SHDB.pdb
+C:\Users\mario\Documents\MEGA\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GestionClientes\AñadirCliente.g.cs
+C:\Users\mario\Documents\MEGA\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GestionClientes\AñadirCliente.baml

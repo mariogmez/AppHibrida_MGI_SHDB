@@ -30,6 +30,39 @@ namespace AppHibrida_MGI_SHDB
                 new KeyGesture(Key.F1)
            }
         );
+
+        //Comandos ventana Gestión de Clientes vista ordenador
+        public static readonly RoutedUICommand Modificar = new RoutedUICommand(
+           "Accion cuando se añade algo",
+           "Añadir",
+           typeof(MainWindow),
+           new InputGestureCollection()
+           {
+                new KeyGesture(Key.F1)
+           }
+        );
+
+        //Comandos ventana Gestión de Clientes vista ordenador
+        public static readonly RoutedUICommand Eliminar = new RoutedUICommand(
+           "Accion cuando se añade algo",
+           "Añadir",
+           typeof(MainWindow),
+           new InputGestureCollection()
+           {
+                new KeyGesture(Key.F1)
+           }
+        );
+
+        //Comandos ventana Gestión de Clientes vista ordenador
+        public static readonly RoutedUICommand Guardar = new RoutedUICommand(
+           "Accion cuando se añade algo",
+           "Añadir",
+           typeof(MainWindow),
+           new InputGestureCollection()
+           {
+                new KeyGesture(Key.F1)
+           }
+        );
         /*
         public static readonly RoutedUICommand AddCliente = new RoutedUICommand(
             "Cerrar la aplicación",

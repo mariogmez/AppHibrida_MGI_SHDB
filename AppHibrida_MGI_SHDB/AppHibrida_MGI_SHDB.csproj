@@ -71,6 +71,9 @@
     <Compile Include="GestionClientesPc.xaml.cs">
       <DependentUpon>GestionClientesPc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GestionClientes\AñadirCliente.xaml.cs">
+      <DependentUpon>AñadirCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GestionPedidosPC.xaml.cs">
       <DependentUpon>GestionPedidosPC.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <DependentUpon>VentanaTactil.xaml</DependentUpon>
     </Compile>
     <Page Include="GestionClientesPc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestionClientes\AñadirCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

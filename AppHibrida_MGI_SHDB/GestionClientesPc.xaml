@@ -5,10 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppHibrida_MGI_SHDB"
         mc:Ignorable="d"
-        Title="GestionClientesPc" Height="450" Width="800">
+        Title="GestionClientesPc" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
 
     <Window.CommandBindings>
         <CommandBinding Command="local:Comandos.Añadir" CanExecute="Añadir_CanExecute" Executed="Añadir_Executed"/>
+        <CommandBinding Command="local:Comandos.Modificar" CanExecute="Añadir_CanExecute" Executed="Añadir_Executed"/>
+        <CommandBinding Command="local:Comandos.Eliminar" CanExecute="Añadir_CanExecute" Executed="Añadir_Executed"/>
+        <CommandBinding Command="local:Comandos.Guardar" CanExecute="Añadir_CanExecute" Executed="Añadir_Executed"/>
+        
     </Window.CommandBindings>
 
     <Grid ShowGridLines="True" HorizontalAlignment="Center"
@@ -19,9 +23,9 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <Button Grid.Column="0" Name="btnAddCliente" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,250" Command="local:Comandos.Añadir" >Añadir</Button>
-        <Button Grid.Column="0" Name="btnModificarCliente" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,100">Modificar</Button>
-        <Button Grid.Column="0" Name="btnEliminarCliente" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,-50">Eliminar</Button>
-        <Button Grid.Column="0" Name="btnGuardarCliente" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,-200">Guardar</Button>
+        <Button Grid.Column="0" Name="btnModificarCliente" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,100" Command="local:Comandos.Modificar">Modificar</Button>
+        <Button Grid.Column="0" Name="btnEliminarCliente" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,-50" Command="local:Comandos.Eliminar">Eliminar</Button>
+        <Button Grid.Column="0" Name="btnGuardarCliente" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,-200 " Command="local:Comandos.Guardar">Guardar</Button>
         <ListView x:Name="lsvwClientes" Grid.Column="1" HorizontalAlignment="Left" Height="395" Margin="10,30,0,0" VerticalAlignment="Top" Width="565">
             <ListView.View>
                 <GridView>
