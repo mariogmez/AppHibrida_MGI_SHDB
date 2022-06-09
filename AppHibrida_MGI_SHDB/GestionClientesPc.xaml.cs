@@ -23,5 +23,17 @@ namespace AppHibrida_MGI_SHDB
         {
             InitializeComponent();
         }
+
+        private void Añadir_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void Añadir_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("Parguela");
+        }
+
+
     }
 }

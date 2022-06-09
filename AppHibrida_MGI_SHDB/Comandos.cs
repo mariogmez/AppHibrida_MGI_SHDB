@@ -19,6 +19,17 @@ namespace AppHibrida_MGI_SHDB
                         new KeyGesture(Key.Escape)
             }
         );
+
+        //Comandos ventana Gestión de Clientes vista ordenador
+        public static readonly RoutedUICommand Añadir = new RoutedUICommand(
+           "Accion cuando se añade algo",
+           "Añadir",
+           typeof(MainWindow),
+           new InputGestureCollection()
+           {
+                new KeyGesture(Key.F1)
+           }
+        );
         /*
         public static readonly RoutedUICommand AddCliente = new RoutedUICommand(
             "Cerrar la aplicación",
