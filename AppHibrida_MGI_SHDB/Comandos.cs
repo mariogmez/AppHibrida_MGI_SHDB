@@ -64,6 +64,16 @@ namespace AppHibrida_MGI_SHDB
            }
         );
 
+        public static readonly RoutedUICommand Aceptar = new RoutedUICommand(
+           "Accion cuando se acepta algo",
+           "Aceptar",
+           typeof(MainWindow),
+           new InputGestureCollection()
+           {
+                new KeyGesture(Key.F1)
+           }
+        );
+
 
 
         /*

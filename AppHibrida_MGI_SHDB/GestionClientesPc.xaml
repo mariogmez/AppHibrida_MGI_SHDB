@@ -4,15 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppHibrida_MGI_SHDB"
+        xmlns:vm="clr-namespace:AppHibrida_MGI_SHDB.ViewModel"
         mc:Ignorable="d"
         Title="GestionClientesPc" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
 
+    <Window.Resources>
+        <vm:CollectionViewModel x:Key="ColeccionVM"/>
+    </Window.Resources>
+    
     <Window.CommandBindings>
         <CommandBinding Command="local:Comandos.Aniadir" CanExecute="Aniadir_CanExecute" Executed="Aniadir_Executed"/>
         <CommandBinding Command="local:Comandos.Modificar" CanExecute="Selecionado_CanExecute" Executed="Modificar_Executed"/>
         <CommandBinding Command="local:Comandos.Eliminar" CanExecute="Selecionado_CanExecute" Executed="Eliminar_Executed"/>
         <CommandBinding Command="local:Comandos.Guardar" CanExecute="Selecionado_CanExecute" Executed="Guardar_Executed"/>
-        
     </Window.CommandBindings>
 
     <Grid ShowGridLines="True" HorizontalAlignment="Center"
@@ -33,10 +37,5 @@
                 </GridView>
             </ListView.View>
         </ListView>
-
-
-
     </Grid>
-
-
 </Window>

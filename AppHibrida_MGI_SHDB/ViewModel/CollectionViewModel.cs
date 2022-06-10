@@ -39,12 +39,13 @@ namespace AppHibrida_MGI_SHDB.ViewModel
         {
             //Cargamos las provincias
             ListaProvincias.Clear();
+            
             var qProvincias = from prov in objBD.provincias select prov;
             foreach (var provi in qProvincias.ToList())
             {
                 ListaProvincias.Add(provi);
             }
-
+            
         }
 
 

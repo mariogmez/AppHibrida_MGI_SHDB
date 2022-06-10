@@ -91,3 +91,4 @@ C:\Users\dam201\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\Gestio
 C:\Users\dam201\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GestionPedidosPC.baml
 C:\Users\dam201\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\addPedido.g.cs
 C:\Users\dam201\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\addPedido.baml
+C:\Users\dam201\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GeneratedInternalTypeHelper.g.cs

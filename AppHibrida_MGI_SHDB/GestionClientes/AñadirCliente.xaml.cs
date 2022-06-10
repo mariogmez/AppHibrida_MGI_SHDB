@@ -35,6 +35,26 @@ namespace AppHibrida_MGI_SHDB.GestionClientes
             cargarProvincias();
         }
 
+
+        private void Aceptar_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            if (comprobarTXT())
+            {
+                e.CanExecute = true;
+            } else
+            {
+                e.CanExecute = false;
+            }
+        }
+
+        private void Aceptar_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
+
+
+
+
         private void cargarProvincias()
         {
             this.cbxProvincia.Items.Clear();
@@ -44,5 +64,37 @@ namespace AppHibrida_MGI_SHDB.GestionClientes
             }
             cbxProvincia.SelectedIndex = 0;
         }
+
+
+        private Boolean comprobarTXT()
+        {
+            Boolean txtRellenado = false;
+
+            if (!txtNombre.Text.Trim().Equals(""))
+            {
+                if (!txtApellidos.Text.Trim().Equals(""))
+                {
+                    if (!txtDomicilio.Text.Trim().Equals(""))
+                    {
+                        if (!txtEmail.Text.Trim().Equals("")) 
+                        {
+                            if (!txtLocalidad.Text.Trim().Equals(""))
+                            {
+                                txtRellenado = true;
+                            }
+                            else MessageBox.Show("Tienes que rellenar el campo localidad");
+                        }
+                        else MessageBox.Show("Tienes que rellenar el campo Email");
+                    }
+                    else MessageBox.Show("Tienes que rellenar el campo Domicilio");
+                }
+                else MessageBox.Show("Tienes que rellenar el campo Apellidos");
+            }
+            else MessageBox.Show("Tienes que rellenar el campo Nombre");
+
+
+            return txtRellenado;
+        }
+
     }
 }
