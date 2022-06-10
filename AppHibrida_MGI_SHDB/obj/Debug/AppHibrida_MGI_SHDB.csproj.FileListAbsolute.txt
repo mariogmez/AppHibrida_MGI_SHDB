@@ -83,3 +83,11 @@ C:\Users\mario\Documents\MEGA\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\
 C:\Users\mario\Documents\MEGA\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\AppHibrida_MGI_SHDB.pdb
 C:\Users\mario\Documents\MEGA\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GestionClientes\AñadirCliente.g.cs
 C:\Users\mario\Documents\MEGA\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GestionClientes\AñadirCliente.baml
+C:\Users\dam201\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GestionClientesPc.g.cs
+C:\Users\dam201\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GestionClientes\AñadirCliente.g.cs
+C:\Users\dam201\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GestionPedidosPC.g.cs
+C:\Users\dam201\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GestionClientesPc.baml
+C:\Users\dam201\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GestionClientes\AñadirCliente.baml
+C:\Users\dam201\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GestionPedidosPC.baml
+C:\Users\dam201\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\addPedido.g.cs
+C:\Users\dam201\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\addPedido.baml

@@ -21,7 +21,7 @@ namespace AppHibrida_MGI_SHDB
         );
 
         //Comandos ventana Gestión de Clientes vista ordenador
-        public static readonly RoutedUICommand Añadir = new RoutedUICommand(
+        public static readonly RoutedUICommand Aniadir = new RoutedUICommand(
            "Accion cuando se añade algo",
            "Añadir",
            typeof(MainWindow),
@@ -63,6 +63,9 @@ namespace AppHibrida_MGI_SHDB
                 new KeyGesture(Key.F1)
            }
         );
+
+
+
         /*
         public static readonly RoutedUICommand AddCliente = new RoutedUICommand(
             "Cerrar la aplicación",

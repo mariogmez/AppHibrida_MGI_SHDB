@@ -26,35 +26,39 @@ namespace AppHibrida_MGI_SHDB
             InitializeComponent();
         }
 
-        private void Añadir_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        private void Aniadir_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
         }
 
-        private void Añadir_Executed(object sender, ExecutedRoutedEventArgs e)
+        private void Aniadir_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             AñadirCliente ventana = new AñadirCliente();
             ventana.ShowDialog();
         }
 
-        private void Modificar_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
 
         private void Modificar_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBox.Show("Parguela");
+            MessageBox.Show("Parguela Modifica");
         }
 
-        private void Eliminar_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        private void Selecionado_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
+            /*       if (listViewClientes.SelectedIndex >= 0) 
+                   {
+                       e.CanExecute = true;
+                   } else
+                   {
+                       e.CanExecute = false;
+                   }
+            */
         }
 
         private void Eliminar_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBox.Show("Parguela");
+            MessageBox.Show("Parguela Elimina");
         }
 
         private void Guardar_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -64,7 +68,7 @@ namespace AppHibrida_MGI_SHDB
 
         private void Guardar_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBox.Show("Parguela");
+            MessageBox.Show("Parguela Guarda");
         }
 
 

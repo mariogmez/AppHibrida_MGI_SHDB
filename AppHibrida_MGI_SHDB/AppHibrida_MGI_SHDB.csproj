@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="addPedido.xaml.cs">
+      <DependentUpon>addPedido.xaml</DependentUpon>
+    </Compile>
     <Compile Include="clientes.cs">
       <DependentUpon>Linq_bd.tt</DependentUpon>
     </Compile>
@@ -94,6 +97,10 @@
     <Compile Include="VentanaTactil.xaml.cs">
       <DependentUpon>VentanaTactil.xaml</DependentUpon>
     </Compile>
+    <Page Include="addPedido.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GestionClientesPc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

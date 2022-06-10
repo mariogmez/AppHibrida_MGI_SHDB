@@ -23,5 +23,48 @@ namespace AppHibrida_MGI_SHDB
         {
             InitializeComponent();
         }
+
+        private void Add_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            if (cmbClientes.SelectedIndex >= 0)
+            {
+                e.CanExecute = true;
+            }
+        }
+
+        private void Seleccionado_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            if (listViewPedidos.SelectedIndex >= 0)
+            {
+                e.CanExecute = true;
+            }
+            else
+            {
+                e.CanExecute = false;
+            }
+        }
+
+        private void Add_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+            addPedido ventana = new addPedido();
+            ventana.ShowDialog();
+        }
+        private void Modificar_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
+
+        private void Eliminar_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+     //       coleccionVM.ListaPedidos.Remove((pedidos)lstPedidos.SelectedItem);
+        }
+
+        private void GuardarBBDD_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+    //        coleccionVM.guardarDatos();
+        }
+
+
     }
 }
