@@ -1,4 +1,5 @@
 ﻿using AppHibrida_MGI_SHDB.GestionClientes;
+using AppHibrida_MGI_SHDB.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,11 @@ namespace AppHibrida_MGI_SHDB
     /// </summary>
     public partial class GestionClientesPc : Window
     {
+        private CollectionViewModel coleccionVM;
         public GestionClientesPc()
         {
             InitializeComponent();
+            coleccionVM = (CollectionViewModel)this.Resources["ColeccionVM"];
         }
 
         private void Aniadir_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -33,7 +36,7 @@ namespace AppHibrida_MGI_SHDB
 
         private void Aniadir_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            AñadirCliente ventana = new AñadirCliente();
+            AñadirCliente ventana = new AñadirCliente(coleccionVM);
             ventana.ShowDialog();
         }
 

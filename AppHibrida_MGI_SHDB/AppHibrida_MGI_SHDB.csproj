@@ -70,6 +70,7 @@
     <Compile Include="clientes.cs">
       <DependentUpon>Linq_bd.tt</DependentUpon>
     </Compile>
+    <Compile Include="Colecciones\ProvinciaCollection.cs" />
     <Compile Include="Comandos.cs" />
     <Compile Include="GestionClientesPc.xaml.cs">
       <DependentUpon>GestionClientesPc.xaml</DependentUpon>
@@ -97,6 +98,7 @@
     <Compile Include="VentanaTactil.xaml.cs">
       <DependentUpon>VentanaTactil.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\CollectionViewModel.cs" />
     <Page Include="addPedido.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

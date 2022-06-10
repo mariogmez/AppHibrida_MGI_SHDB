@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="AñadirCliente" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="190,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="135"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="190,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="415"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="456,219,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="149"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="361,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="244"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="190,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="231"/>
+        <TextBlock HorizontalAlignment="Left" Margin="361,92,0,0" TextWrapping="Wrap" Text="Apellidos" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="190,92,0,0" TextWrapping="Wrap" Text="Nombre" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="190,200,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="190,144,0,0" TextWrapping="Wrap" Text="Domicilio" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="456,203,0,0" TextWrapping="Wrap" Text="Localidad" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="192,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Provincia"/>
+        <Button x:Name="btnEnviar" Content="Enviar" HorizontalAlignment="Left" Margin="456,278,0,0" VerticalAlignment="Top" Width="149"/>
+        <ComboBox x:Name="cbxProvincia" HorizontalAlignment="Left" Margin="192,275,0,0" VerticalAlignment="Top" Width="229"/>
+
     </Grid>
+
 </Window>
