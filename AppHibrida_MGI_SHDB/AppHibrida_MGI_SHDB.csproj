@@ -70,6 +70,7 @@
     <Compile Include="clientes.cs">
       <DependentUpon>Linq_bd.tt</DependentUpon>
     </Compile>
+    <Compile Include="Colecciones\ClienteCollection.cs" />
     <Compile Include="Colecciones\ProvinciaCollection.cs" />
     <Compile Include="Comandos.cs" />
     <Compile Include="GestionClientesPc.xaml.cs">

@@ -27,6 +27,12 @@ namespace AppHibrida_MGI_SHDB.ViewModel
             }
         }
 
+        public void guardarDatos()
+        {
+            objBD.SaveChanges();
+            System.Windows.MessageBox.Show("Base de Datos actualizada correctamente...", "BBDD actualizada");
+        }
+
         public CollectionViewModel()
         {
             cargarDatos();
@@ -45,9 +51,15 @@ namespace AppHibrida_MGI_SHDB.ViewModel
             {
                 ListaProvincias.Add(provi);
             }
-            
-        }
 
+
+            ListaClientes.Clear();
+            var qClientes = from cli in objBD.clientes select cli;
+            foreach (var client in qClientes.ToList())
+            {
+                ListaClientes.Add(client);
+            }
+        }
 
 
         //Carga los datos de provincia
@@ -62,10 +74,21 @@ namespace AppHibrida_MGI_SHDB.ViewModel
             }
         }
 
+    
+            
+        private ClienteCollection _listaClientes = new ClienteCollection();
 
-
-        private void notificarPropertyChanged([CallerMemberName] string propertyName = "")
+        public ClienteCollection ListaClientes
         {
+            get { return _listaClientes; }
+            set
+            {
+                _listaClientes = value;
+                notificarPropertyChanged();
+            }
+        }
+
+        private void notificarPropertyChanged([CallerMemberName] string propertyName = "") {
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));

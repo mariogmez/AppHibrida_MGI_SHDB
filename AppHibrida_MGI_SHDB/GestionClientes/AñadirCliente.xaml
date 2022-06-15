@@ -3,15 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AppHibrida_MGI_SHDB.GestionClientes"
+        xmlns:local="clr-namespace:AppHibrida_MGI_SHDB"
+        
         mc:Ignorable="d"
         Title="AñadirCliente" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    
+
     <Window.CommandBindings>
-        <CommandBinding Command="local:Comandos.Aceptar"  CanExecute="Aceptar_CanExecute" Executed="Aceptar_Executed"/>
+        <CommandBinding Command="local:Comandos.Aceptar" CanExecute="Aceptar_CanExecute" Executed="Aceptar_Executed"/>
     </Window.CommandBindings>
-    
-    
+
+
     <Grid>
         <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="190,108,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="135"/>
         <TextBox x:Name="txtDomicilio" HorizontalAlignment="Left" Height="23" Margin="190,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="415"/>
@@ -26,6 +27,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="192,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Provincia"/>
         <Button x:Name="btnEnviar" Content="Enviar" HorizontalAlignment="Left" Margin="456,278,0,0" VerticalAlignment="Top" Width="149" Command="local:Comandos.Aceptar"/>
         <ComboBox x:Name="cbxProvincia" HorizontalAlignment="Left" Margin="192,275,0,0" VerticalAlignment="Top" Width="229"/>
+        <TextBox x:Name="txtDni" HorizontalAlignment="Left" Height="23" Margin="190,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="299"/>
+        <TextBlock HorizontalAlignment="Left" Margin="190,33,0,0" TextWrapping="Wrap" Text="Dni" VerticalAlignment="Top" Width="97"/>
 
     </Grid>
 

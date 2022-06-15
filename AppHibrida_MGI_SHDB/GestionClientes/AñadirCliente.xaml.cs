@@ -28,27 +28,44 @@ namespace AppHibrida_MGI_SHDB.GestionClientes
     public partial class AñadirCliente : Window
     {
         CollectionViewModel coleccionVM;
-        public AñadirCliente(CollectionViewModel colectionVM)
+        GestionClientesPc gestor;
+        public AñadirCliente(CollectionViewModel colectionVM, GestionClientesPc gestionClientesPc)
         {
             InitializeComponent();
-            this.coleccionVM = colectionVM;
+            coleccionVM = colectionVM;
             cargarProvincias();
+            gestor = gestionClientesPc;
+            
         }
 
 
         private void Aceptar_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            if (comprobarTXT())
-            {
-                e.CanExecute = true;
-            } else
-            {
-                e.CanExecute = false;
-            }
+            e.CanExecute = true;
+
         }
 
         private void Aceptar_Executed(object sender, ExecutedRoutedEventArgs e)
         {
+            if (comprobarTXT())
+            {
+                clientes cliente = new clientes();
+                cliente.dni = txtDni.Text.ToString();
+                cliente.nombre = txtNombre.Text.ToString();
+                cliente.apellidos = txtApellidos.Text.ToString();
+                cliente.email = txtEmail.Text.ToString();
+                cliente.domicilio = txtDomicilio.Text.ToString();
+                cliente.localidad = txtLocalidad.Text.ToString();
+                cliente.provincia = cbxProvincia.SelectedIndex;
+
+                cliente.provincias = coleccionVM.ListaProvincias[cbxProvincia.SelectedIndex];
+                coleccionVM.objBD.clientes.Add(cliente);
+                coleccionVM.ListaClientes.Add(cliente);
+                
+                
+                MessageBox.Show("Fresquito");
+                this.Close();
+            }
 
         }
 
@@ -70,27 +87,33 @@ namespace AppHibrida_MGI_SHDB.GestionClientes
         {
             Boolean txtRellenado = false;
 
-            if (!txtNombre.Text.Trim().Equals(""))
+            if (!txtDni.Text.Trim().Equals(""))
             {
-                if (!txtApellidos.Text.Trim().Equals(""))
+                if (!txtNombre.Text.Trim().Equals(""))
                 {
-                    if (!txtDomicilio.Text.Trim().Equals(""))
+                    if (!txtApellidos.Text.Trim().Equals(""))
                     {
-                        if (!txtEmail.Text.Trim().Equals("")) 
+                        if (!txtDomicilio.Text.Trim().Equals(""))
                         {
-                            if (!txtLocalidad.Text.Trim().Equals(""))
+                            if (!txtEmail.Text.Trim().Equals(""))
                             {
-                                txtRellenado = true;
+                                if (!txtLocalidad.Text.Trim().Equals(""))
+                                {
+                                    txtRellenado = true;
+                                }
+                                else MessageBox.Show("Tienes que rellenar el campo localidad");
                             }
-                            else MessageBox.Show("Tienes que rellenar el campo localidad");
+                            else MessageBox.Show("Tienes que rellenar el campo Email");
                         }
-                        else MessageBox.Show("Tienes que rellenar el campo Email");
+                        else MessageBox.Show("Tienes que rellenar el campo Domicilio");
                     }
-                    else MessageBox.Show("Tienes que rellenar el campo Domicilio");
+                    else MessageBox.Show("Tienes que rellenar el campo Apellidos");
                 }
-                else MessageBox.Show("Tienes que rellenar el campo Apellidos");
-            }
-            else MessageBox.Show("Tienes que rellenar el campo Nombre");
+                else MessageBox.Show("Tienes que rellenar el campo Nombre");
+            } 
+            else MessageBox.Show("Tienes que rellenar el campo Dni");
+
+
 
 
             return txtRellenado;
