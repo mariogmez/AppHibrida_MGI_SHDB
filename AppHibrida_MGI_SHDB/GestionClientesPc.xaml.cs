@@ -37,7 +37,7 @@ namespace AppHibrida_MGI_SHDB
 
         public void Aniadir_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            AñadirCliente ventana = new AñadirCliente(coleccionVM, this);
+            AñadirCliente ventana = new AñadirCliente(coleccionVM);
             ventana.ShowDialog();
         }
 
@@ -62,8 +62,11 @@ namespace AppHibrida_MGI_SHDB
 
         public void Eliminar_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            coleccionVM.objBD.clientes.Remove((clientes)lstClientes.SelectedItem);
-            coleccionVM.ListaClientes.Remove((clientes)lstClientes.SelectedItem);
+            if (MessageBox.Show("¿Estas seguro que quieres eliminar este cliente?", "Cuidado", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                coleccionVM.objBD.clientes.Remove((clientes)lstClientes.SelectedItem);
+                coleccionVM.ListaClientes.Remove((clientes)lstClientes.SelectedItem);
+            }
         }
 
         public void Guardar_CanExecute(object sender, CanExecuteRoutedEventArgs e)

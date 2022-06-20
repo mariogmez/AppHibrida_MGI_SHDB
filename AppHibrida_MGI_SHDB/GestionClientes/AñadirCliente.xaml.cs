@@ -28,13 +28,11 @@ namespace AppHibrida_MGI_SHDB.GestionClientes
     public partial class AñadirCliente : Window
     {
         CollectionViewModel coleccionVM;
-        GestionClientesPc gestor;
-        public AñadirCliente(CollectionViewModel colectionVM, GestionClientesPc gestionClientesPc)
+        public AñadirCliente(CollectionViewModel colectionVM)
         {
             InitializeComponent();
             coleccionVM = colectionVM;
             cargarProvincias();
-            gestor = gestionClientesPc;
             
         }
 

@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppHibrida_MGI_SHDB"
         mc:Ignorable="d"
-        Title="VentanaTactil" Height="450" Width="800">
+        Title="VentanaTactil" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
     <Grid>
+        
+        
         
     </Grid>
 </Window>

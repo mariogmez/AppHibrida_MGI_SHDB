@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppHibrida_MGI_SHDB.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,22 @@ namespace AppHibrida_MGI_SHDB
     /// </summary>
     public partial class GestionPedidosPC : Window
     {
+        CollectionViewModel coleccionVM;
+
         public GestionPedidosPC()
         {
             InitializeComponent();
+            coleccionVM = (CollectionViewModel)this.Resources["ColeccionVM"];
+        }
+
+        private void cargarClientes()
+        {
+            cmbClientes.Items.Clear();
+            foreach (var provi in coleccionVM.ListaProvincias)
+            {
+                cmbClientes.Items.Add(provi.nombre_provincia);
+            }
+            cmbClientes.SelectedIndex = 0;
         }
 
         private void Add_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -34,14 +48,15 @@ namespace AppHibrida_MGI_SHDB
 
         private void Seleccionado_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            if (listViewPedidos.SelectedIndex >= 0)
-            {
-                e.CanExecute = true;
-            }
-            else
-            {
-                e.CanExecute = false;
-            }
+            /*            if (listViewPedidos.SelectedIndex >= 0)
+                        {
+                            e.CanExecute = true;
+                        }
+                        else
+                        {
+                            e.CanExecute = false;
+                        }*/
+            e.CanExecute = true;
         }
 
         private void Add_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -50,6 +65,8 @@ namespace AppHibrida_MGI_SHDB
             addPedido ventana = new addPedido();
             ventana.ShowDialog();
         }
+
+
         private void Modificar_Executed(object sender, ExecutedRoutedEventArgs e)
         {
 
@@ -60,9 +77,15 @@ namespace AppHibrida_MGI_SHDB
      //       coleccionVM.ListaPedidos.Remove((pedidos)lstPedidos.SelectedItem);
         }
 
-        private void GuardarBBDD_Executed(object sender, ExecutedRoutedEventArgs e)
+        public void Guardar_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-    //        coleccionVM.guardarDatos();
+            e.CanExecute = true;
+        }
+
+        public void Guardar_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+           // coleccionVM.guardarDatos();
         }
 
 
