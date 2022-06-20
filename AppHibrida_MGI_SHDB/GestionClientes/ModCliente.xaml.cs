@@ -21,16 +21,20 @@ namespace AppHibrida_MGI_SHDB.GestionClientes
     public partial class ModCliente : Window
     {
         CollectionViewModel coleccionVM;
+        clientes client;
+
         public ModCliente(CollectionViewModel colectionVM, clientes cli)
         {
             InitializeComponent();
             coleccionVM = colectionVM;
             cargarProvincias();
             cargar_datos(cli);
+            client = cli;
         }
 
         private void cargar_datos(clientes cli)
         {
+
             txtDni.Text = cli.dni;
             txtNombre.Text = cli.nombre;
             txtApellidos.Text = cli.apellidos;
@@ -59,9 +63,11 @@ namespace AppHibrida_MGI_SHDB.GestionClientes
                 cliente.provincia = cbxProvincia.SelectedIndex;
 
                 cliente.provincias = coleccionVM.ListaProvincias[cbxProvincia.SelectedIndex];
-
+                coleccionVM.objBD.clientes.Remove(client);
+                coleccionVM.ListaClientes.Remove(client);
                 coleccionVM.objBD.clientes.Add(cliente);
                 coleccionVM.ListaClientes.Add(cliente);
+
 
                 this.Close();
             }

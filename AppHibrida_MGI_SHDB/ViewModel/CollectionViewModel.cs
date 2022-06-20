@@ -54,11 +54,33 @@ namespace AppHibrida_MGI_SHDB.ViewModel
 
 
             ListaClientes.Clear();
-            var qClientes = from cli in objBD.clientes select cli;
+            var qClientes = from cli in objBD.clientes orderby cli.apellidos, cli.nombre select cli;
             foreach (var client in qClientes.ToList())
             {
                 ListaClientes.Add(client);
             }
+
+
+            ListaPedidos.Clear();
+            var qPedidos = from ped in objBD.pedidos select ped;
+            foreach (var pedi in qPedidos.ToList())
+            {
+                ListaPedidos.Add(pedi);
+            }
+
+
+
+        }
+
+        public void pedidosDeCliente (String dni)
+        {
+            ListaPedidos.Clear();
+            var qPedidos = from ped in objBD.pedidos where ped.cliente == dni select ped;
+            foreach (var pedi in qPedidos.ToList())
+            {
+                ListaPedidos.Add(pedi);
+            }
+
         }
 
 
@@ -87,6 +109,21 @@ namespace AppHibrida_MGI_SHDB.ViewModel
                 notificarPropertyChanged();
             }
         }
+
+
+        
+        private PedidosCollection _listaPedidos = new PedidosCollection();
+        public PedidosCollection ListaPedidos
+        {
+            get { return _listaPedidos; }
+            set
+            {
+                _listaPedidos = value;
+                notificarPropertyChanged();
+            }
+        }
+
+
 
         private void notificarPropertyChanged([CallerMemberName] string propertyName = "") {
             if (PropertyChanged != null)

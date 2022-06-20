@@ -3,11 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:AppHibrida_MGI_SHDB.ViewModel"
         xmlns:local="clr-namespace:AppHibrida_MGI_SHDB"
         mc:Ignorable="d"
         Title="GestionPedidosPC" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     
-    
+    <Window.Resources>
+        <vm:CollectionViewModel x:Key="ColeccionVM"/>
+    </Window.Resources>
+
+
     <Window.CommandBindings>
         <CommandBinding Command="local:Comandos.Aniadir" CanExecute="Add_CanExecute" Executed="Add_Executed"/>
         <CommandBinding Command="local:Comandos.Modificar" CanExecute="Seleccionado_CanExecute" Executed="Modificar_Executed"/>
@@ -28,31 +33,9 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ComboBox x:Name="cmbClientes" Grid.ColumnSpan="2" Grid.Row="0"/>
-        <DataGrid Name="dgvPedidos" Grid.ColumnSpan="4" Grid.Row="1" ColumnWidth="Auto">
-            <DataGrid.Columns>
-                <DataGridTextColumn Width="0.5*" Header="ID"/>
-                <DataGridTextColumn Width="*" Header="FECHA PEDIDO" />
-                <DataGridTextColumn Width="*" Header="FECHA ENTREGA" />
-                <DataGridTextColumn Width="2*" Header="DESCRIPCION" />
-            </DataGrid.Columns>
+        <ComboBox x:Name="cmbClientes" Grid.ColumnSpan="2" Grid.Row="0" Margin="0,5,0,5" SelectionChanged="cmbClientes_SelectionChanged"/>
+        <DataGrid CanUserAddRows="False" Name="dgvPedidos" AutoGenerateColumns="true" Grid.Row="1" ColumnWidth="Auto">
 
-            <DataGrid.RowDetailsTemplate>
-                <DataTemplate>
-                    <DockPanel Background="GhostWhite">
-                        <Image DockPanel.Dock="Left" Source="{Binding foto}" Height="64" Margin="10" />
-                        <DataGrid Name="dgAtenciones"  ItemsSource="{Binding atencsmedicas}">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="ID Atencion" Binding="{Binding idatenc}" Visibility="Collapsed"/>
-                                <DataGridTextColumn Header="Nombre Paciente" Binding="{Binding pacientes.nombre}"/>
-                                <DataGridTextColumn Header="Apellidos Paciente" Binding="{Binding pacientes.apellidos}"/>
-                                <DataGridTextColumn Header="Fecha" Binding="{Binding fecha, StringFormat=dd/MM/yyyy}"/>
-                                <DataGridTextColumn Header="Diagnóstico" Binding="{Binding diagnostico}"/>
-                            </DataGrid.Columns>
-                        </DataGrid>
-                    </DockPanel>
-                </DataTemplate>
-            </DataGrid.RowDetailsTemplate>
 
         </DataGrid>
         <Button x:Name="btnAnadir" Content="Añadir" Grid.Row="2" Command="local:Comandos.Aniadir"/>

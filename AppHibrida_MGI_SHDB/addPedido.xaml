@@ -9,15 +9,13 @@
     <Grid>
         <TextBox x:Name="txtCliente" HorizontalAlignment="Left" Height="23" Margin="190,109,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="245"/>
         <TextBox x:Name="txtIdPedido" HorizontalAlignment="Left" Height="23" Margin="456,109,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="135"/>
-        <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Height="23" Margin="190,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="415"/>
+        <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Height="23" Margin="190,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="401"/>
         <TextBlock HorizontalAlignment="Left" Margin="456,88,0,0" TextWrapping="Wrap" Text="ID pedido" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="190,200,0,0" TextWrapping="Wrap" Text="Fecha Pedido" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="190,144,0,0" TextWrapping="Wrap" Text="Descripción" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="456,203,0,0" TextWrapping="Wrap" Text="Fecha Entrega" VerticalAlignment="Top"/>
-        <Button x:Name="btnEnviar" Content="Enviar" HorizontalAlignment="Left" Margin="456,278,0,0" VerticalAlignment="Top" Width="149" Command="local:Comandos.Aceptar"/>
+        <Button x:Name="btnEnviar" Content="Enviar" HorizontalAlignment="Left" Margin="442,219,0,0" VerticalAlignment="Top" Width="149" Command="local:Comandos.Aceptar"/>
         <TextBlock HorizontalAlignment="Left" Margin="192,88,0,0" TextWrapping="Wrap" Text="Cliente" VerticalAlignment="Top" Width="97"/>
         <DatePicker x:Name="dtpFechaPedido" HorizontalAlignment="Left" Margin="192,219,0,0" VerticalAlignment="Top" Width="174"/>
-        <DatePicker x:Name="dtpFechaEntrega" HorizontalAlignment="Left" Margin="456,219,0,0" VerticalAlignment="Top" Width="174" DisplayDateStart="{Binding ElementName=dtpFechaEntrega, Path=Text, Mode=OneWay}"/>
 
     </Grid>
 </Window>

@@ -132,3 +132,5 @@ C:\Users\mario\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\AppHibr
 C:\Users\mario\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\AppHibrida_MGI_SHDB.csproj.CopyComplete
 C:\Users\mario\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\AppHibrida_MGI_SHDB.exe
 C:\Users\mario\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\AppHibrida_MGI_SHDB.pdb
+C:\Users\el_sa\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GestionClientes\ModCliente.g.cs
+C:\Users\el_sa\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\GestionClientes\ModCliente.baml

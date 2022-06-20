@@ -45,6 +45,7 @@ namespace AppHibrida_MGI_SHDB
 
         public void Modificar_Executed(object sender, ExecutedRoutedEventArgs e)
         {
+
             ModCliente ventana = new ModCliente(coleccionVM, coleccionVM.ListaClientes[lstClientes.SelectedIndex]);
             ventana.ShowDialog();
         }

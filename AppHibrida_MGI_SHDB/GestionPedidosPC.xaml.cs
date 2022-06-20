@@ -1,6 +1,7 @@
 ﻿using AppHibrida_MGI_SHDB.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace AppHibrida_MGI_SHDB
     public partial class GestionPedidosPC : Window
     {
         CollectionViewModel coleccionVM;
+        String[] id;
 
         public GestionPedidosPC(CollectionViewModel colectionVM)
         {
@@ -32,9 +34,13 @@ namespace AppHibrida_MGI_SHDB
         private void cargarClientes()
         {
             cmbClientes.Items.Clear();
+            id = new string[coleccionVM.ListaClientes.Count()];
+            int contador = 0;
             foreach (var clie in coleccionVM.ListaClientes)
             {
-                cmbClientes.Items.Add(clie.nombre);
+                cmbClientes.Items.Add(clie.apellidos+" "+clie.nombre);
+                id[contador] = clie.dni;
+                contador++;
             }
             cmbClientes.SelectedIndex = 0;
         }
@@ -89,6 +95,35 @@ namespace AppHibrida_MGI_SHDB
            // coleccionVM.guardarDatos();
         }
 
+        private void cmbClientes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            String dniClie = coleccionVM.ListaClientes[cmbClientes.SelectedIndex].dni.ToString();
 
+            coleccionVM.pedidosDeCliente(coleccionVM.ListaClientes[cmbClientes.SelectedIndex].dni.ToString());
+            List<pedidos> ped = new List<pedidos>();
+            ped = coleccionVM.ListaPedidos.ToList();
+            if (coleccionVM.ListaPedidos.Count > 0)
+            {
+                MessageBox.Show(coleccionVM.ListaPedidos[0].cliente);
+                dgvPedidos.ItemsSource = null;
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Cliente");
+                dt.Columns.Add("Descripcion");
+
+                for (int i = 0; i < coleccionVM.ListaPedidos.Count; i++)
+                {
+                    dt.Rows.Add(coleccionVM.ListaPedidos[i].cliente, coleccionVM.ListaPedidos[i].descripcion);
+                }
+                dgvPedidos.ItemsSource = dt.DefaultView;
+
+            }
+            else
+            {
+                
+            }
+
+            
+  
+        }
     }
 }
