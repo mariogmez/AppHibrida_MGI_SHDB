@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:AppHibrida_MGI_SHDB"
         mc:Ignorable="d"
         Title="GestionPedidosPC" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    
+    
     <Window.CommandBindings>
         <CommandBinding Command="local:Comandos.Aniadir" CanExecute="Add_CanExecute" Executed="Add_Executed"/>
         <CommandBinding Command="local:Comandos.Modificar" CanExecute="Seleccionado_CanExecute" Executed="Modificar_Executed"/>

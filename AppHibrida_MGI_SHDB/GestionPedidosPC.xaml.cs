@@ -26,14 +26,15 @@ namespace AppHibrida_MGI_SHDB
         {
             InitializeComponent();
             coleccionVM = (CollectionViewModel)this.Resources["ColeccionVM"];
+            cargarClientes();
         }
 
         private void cargarClientes()
         {
             cmbClientes.Items.Clear();
-            foreach (var provi in coleccionVM.ListaProvincias)
+            foreach (var clie in coleccionVM.ListaClientes)
             {
-                cmbClientes.Items.Add(provi.nombre_provincia);
+                cmbClientes.Items.Add(clie.nombre);
             }
             cmbClientes.SelectedIndex = 0;
         }
