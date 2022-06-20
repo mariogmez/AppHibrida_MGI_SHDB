@@ -22,12 +22,12 @@ namespace AppHibrida_MGI_SHDB
     /// </summary>
     public partial class GestionClientesPc : Window
     {
-        private CollectionViewModel coleccionVM;
-        
-        public GestionClientesPc()
+
+        CollectionViewModel coleccionVM;
+        public GestionClientesPc(CollectionViewModel colectionVM)
         {
             InitializeComponent();
-            coleccionVM = (CollectionViewModel)this.Resources["ColeccionVM"];
+            coleccionVM = colectionVM;
         }
 
         public void Aniadir_CanExecute(object sender, CanExecuteRoutedEventArgs e)

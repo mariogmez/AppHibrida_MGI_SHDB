@@ -22,10 +22,10 @@ namespace AppHibrida_MGI_SHDB
     {
         CollectionViewModel coleccionVM;
 
-        public GestionPedidosPC()
+        public GestionPedidosPC(CollectionViewModel colectionVM)
         {
             InitializeComponent();
-            coleccionVM = (CollectionViewModel)this.Resources["ColeccionVM"];
+            coleccionVM = colectionVM;
             cargarClientes();
         }
 
