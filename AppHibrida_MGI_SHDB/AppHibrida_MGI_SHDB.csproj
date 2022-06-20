@@ -79,6 +79,9 @@
     <Compile Include="GestionClientes\AñadirCliente.xaml.cs">
       <DependentUpon>AñadirCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GestionClientes\ModCliente.xaml.cs">
+      <DependentUpon>ModCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GestionPedidosPC.xaml.cs">
       <DependentUpon>GestionPedidosPC.xaml</DependentUpon>
     </Compile>
@@ -109,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GestionClientes\AñadirCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestionClientes\ModCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\el_sa\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\
+C:\Users\mario\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\obj\Debug\
 AppHibrida_MGI_SHDB
 none
 false
 DEBUG;TRACE
-C:\Users\el_sa\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\App.xaml
-72145032823
+C:\Users\mario\Desktop\AppHibrida_MGI_SHDB\AppHibrida_MGI_SHDB\App.xaml
+81886452193
 2-1243346903
-22-1930382804
-181822692753
-addPedido.xaml;GestionClientesPc.xaml;GestionClientes\AñadirCliente.xaml;GestionPedidosPC.xaml;MainWindow.xaml;VentanaPc.xaml;VentanaTactil.xaml;
+23-1187880181
+18-496972092
+addPedido.xaml;GestionClientesPc.xaml;GestionClientes\AñadirCliente.xaml;GestionClientes\ModCliente.xaml;GestionPedidosPC.xaml;MainWindow.xaml;VentanaPc.xaml;VentanaTactil.xaml;
 
 True
 

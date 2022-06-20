@@ -28,6 +28,7 @@ namespace AppHibrida_MGI_SHDB
         {
             InitializeComponent();
             coleccionVM = colectionVM;
+            coleccionVM = (CollectionViewModel)this.Resources["ColeccionVM"]; // <-- ESTA ES LA LINEA
         }
 
         public void Aniadir_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -44,8 +45,8 @@ namespace AppHibrida_MGI_SHDB
 
         public void Modificar_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-
-                        
+            ModCliente ventana = new ModCliente(coleccionVM, coleccionVM.ListaClientes[lstClientes.SelectedIndex]);
+            ventana.ShowDialog();
         }
 
         public void Selecionado_CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -76,7 +77,7 @@ namespace AppHibrida_MGI_SHDB
 
         public void Guardar_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-
+            
             coleccionVM.guardarDatos();
         }
 

@@ -16,26 +16,48 @@
 
     </Window.CommandBindings>
 
-    <Grid ShowGridLines="True" HorizontalAlignment="Center"
-     VerticalAlignment="Center" Background="AliceBlue"
-     Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ComboBox Grid.Column="0" x:Name="cmbClientes"  Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,300" ></ComboBox>
-        <Button Grid.Column="0" x:Name="btnAddPedido" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,100" Command="local:Comandos.Aniadir">Añadir</Button>
-        <Button Grid.Column="0" x:Name="btnModificarPedido" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,0" Command="local:Comandos.Modificar">Modificar</Button>
-        <Button Grid.Column="0" x:Name="btnEliminarPedido" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,-100" Command="local:Comandos.Eliminar">Eliminar</Button>
-        <Button Grid.Column="0" x:Name="btnGuardarPedido" Height="40" Width="140" FontSize="20" FontWeight="Bold" Margin="0,0,0,-200" Command="local:Comandos.Guardar">Guardar</Button>
-        <ListView Grid.Column="1" x:Name="listViewPedidos">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <ComboBox x:Name="cmbClientes" Grid.ColumnSpan="2" Grid.Row="0"/>
+        <DataGrid Name="dgvPedidos" Grid.ColumnSpan="4" Grid.Row="1" ColumnWidth="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="0.5*" Header="ID"/>
+                <DataGridTextColumn Width="*" Header="FECHA PEDIDO" />
+                <DataGridTextColumn Width="*" Header="FECHA ENTREGA" />
+                <DataGridTextColumn Width="2*" Header="DESCRIPCION" />
+            </DataGrid.Columns>
 
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <DockPanel Background="GhostWhite">
+                        <Image DockPanel.Dock="Left" Source="{Binding foto}" Height="64" Margin="10" />
+                        <DataGrid Name="dgAtenciones"  ItemsSource="{Binding atencsmedicas}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="ID Atencion" Binding="{Binding idatenc}" Visibility="Collapsed"/>
+                                <DataGridTextColumn Header="Nombre Paciente" Binding="{Binding pacientes.nombre}"/>
+                                <DataGridTextColumn Header="Apellidos Paciente" Binding="{Binding pacientes.apellidos}"/>
+                                <DataGridTextColumn Header="Fecha" Binding="{Binding fecha, StringFormat=dd/MM/yyyy}"/>
+                                <DataGridTextColumn Header="Diagnóstico" Binding="{Binding diagnostico}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </DockPanel>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
 
+        </DataGrid>
+        <Button x:Name="btnAnadir" Content="Añadir" Grid.Row="2" Command="local:Comandos.Aniadir"/>
+        <Button x:Name="btnModificar" Content="Modificar" Grid.Row="2" Grid.Column="1" Command="local:Comandos.Modificar"/>
+        <Button x:Name="btnEliminar" Content="Eliminar" Grid.Row="2" Grid.Column="2" Command="local:Comandos.Eliminar"/>
+        <Button x:Name="btnGuardar" Content="Guardar BD" Grid.Row="2" Grid.Column="3" Command="local:Comandos.Guardar"/>
     </Grid>
 </Window>
